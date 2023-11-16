@@ -1,0 +1,18 @@
+@startuml
+
+state Closed
+state Open
+state Closing
+state Opening
+
+Closed --> Opening : "Open Door"
+    
+Open --> Closing : "Close Door"
+    
+Closing --> Closed : "Stop Motor"
+    
+Closing --> Opening : "Open Door"
+    
+Opening --> Open : "Stop Motor"
+    
+@enduml                    
