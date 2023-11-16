@@ -1,0 +1,115 @@
+{
+  "ShowHidden": false,
+  "ShowAllFiles": false,
+  "SaveDisabled": false,
+  "SSoTmeProjectId": "ea4db014-f979-4f25-80c4-62dd4fccb098",
+  "Name": "eapi-python-state-machine-seed",
+  "ProjectSettings": [
+    {
+      "ProjectSettingId": "f0021af4-7af1-48c4-874f-ae78f1260c9e",
+      "Name": "project-name",
+      "Value": "eapi-python-state-machine-seed"
+    }
+  ],
+  "ProjectTranspilers": [
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "ddeef526-5399-4be1-a676-8c64961e549d",
+        "Name": "SSoT",
+        "Description": "SSoT"
+      },
+      "ProjectTranspilerId": "5a2a7a26-dafa-4fba-9207-1f3d418442c1",
+      "Name": "SSoT",
+      "RelativePath": "",
+      "CommandLine": "effortless/ssot -p ssot-key=recPTC2NzX4sEuZ14"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "0210a58e-9763-4447-ba4b-52ec08a1d53c",
+        "Name": "ODXMLToEntitiesJson",
+        "Description": "ODXML To Entities Json"
+      },
+      "ProjectTranspilerId": "4b3650f2-4c37-4a8e-a792-dc56a495a1cc",
+      "Name": "ODXMLToEntitiesJson",
+      "RelativePath": "/SSoT",
+      "CommandLine": "odxml42/odxml-to-entities-json -i ../ODXML/DataSchema.odxml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "19d8142a-2f4d-46ac-9de6-77441f233192",
+        "Name": "AirtableToXml",
+        "Description": "Extracts the contents of an airtable base as a single Xml file."
+      },
+      "ProjectTranspilerId": "fb776c04-2e76-4d1a-a21c-22eb9ffd0b4c",
+      "Name": "AirtableToXml",
+      "RelativePath": "/SSoT",
+      "CommandLine": "airtable/airtable-to-xml -p baseId=appmZlxBV11EJdulv -i ./Entities.json -p view=Current"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "8076f6a7-3c5b-4f57-b6d4-ba0c39094344",
+        "Name": "XmlToStateMachineXml",
+        "Description": "Xml To State Machine Xml"
+      },
+      "ProjectTranspilerId": "bdf1dee7-7c8f-444b-bc35-ea0c37609358",
+      "Name": "XmlToStateMachineXml",
+      "RelativePath": "/SSoT",
+      "CommandLine": "drawio/xml-to-statemachine-xml -i ./Airtable.xml -o ../StateMachine/state-machine.xml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "18d4832b-87c3-4596-b53d-25efb8ffc164",
+        "Name": "StateMachineXmlToDocs",
+        "Description": "State Machine Xml To Docs"
+      },
+      "ProjectTranspilerId": "d213d1e0-edec-4449-8fc7-586999104afe",
+      "Name": "StateMachineXmlToDocs",
+      "RelativePath": "/StateMachine",
+      "CommandLine": "drawio/statemachine-xml-to-docs -i ./state-machine.xml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "4f7bd90b-a200-408d-8fe5-a665ed378ce5",
+        "Name": "StateMachineXmlToPlantText",
+        "Description": "State Machine Xml To Plant Text "
+      },
+      "ProjectTranspilerId": "3746821f-ef51-4245-9efa-c46b3a148eed",
+      "Name": "StateMachineXmlToPlantText",
+      "RelativePath": "/StateMachine",
+      "CommandLine": "drawio/statemachine-xml-to-planttext -i ./state-machine.xml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "fddc44e8-1e48-49bb-b9db-56a10d39c6aa",
+        "Name": "PlantTextToPng",
+        "Description": "PlantText to Png"
+      },
+      "ProjectTranspilerId": "4466644f-eccc-4489-bc63-412372c72fef",
+      "Name": "PlantTextToPng",
+      "RelativePath": "/StateMachine",
+      "CommandLine": "planttext-to-png -i ./planttext.txt"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "8de316ad-9a7b-4c01-bce0-67f2c9ae59b2",
+        "Name": "DrawIOXmlExportToStateMachineXml",
+        "Description": "DrawIOXmlExportToStateMachineXml"
+      },
+      "ProjectTranspilerId": "f2547924-f184-4308-a74e-6430a4002e99",
+      "Name": "DrawIOXmlExportToStateMachineXml",
+      "RelativePath": "/DrawIO",
+      "CommandLine": "drawio/drawio-xml-export-to-state-machine-xml -i .\\TrafficLight.drawio.xml -o state-machine.xml"
+    },
+    {
+      "MatchedTranspiler": {
+        "TranspilerId": "4a978255-a05e-4487-a18e-221ee27b2325",
+        "Name": "StateMachineXmlToPython",
+        "Description": "State Machine Xml To Python"
+      },
+      "ProjectTranspilerId": "53eac101-e26c-4672-9b87-59e82920e662",
+      "Name": "StateMachineXmlToPython",
+      "RelativePath": "/Python",
+      "CommandLine": "drawio/state-machine-xml-to-python -i ..\\StateMachine\\state-machine.xml"
+    }
+  ]
+}

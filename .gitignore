@@ -1,0 +1,7 @@
+/**/obj/**/*
+/**/bin/**/*
+/.ssotme/**/*
+/DSPXml/**/*
+/SSoT/__patch.json
+/Python/**/__pycache__/*.pyc
+/REMOVED_GIT_FOLDER/**/*
